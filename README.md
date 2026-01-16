@@ -3,7 +3,7 @@
 
 ---
 
-# 🚀 Opex Consulting – Cypress Automation Framework
+# 🌎 Opex Consulting – Cypress Automation Framework
 
 ![CI](https://github.com/sphinx010/OpexConsulting_LP_Automated_Suite-/actions/workflows/cypress.yml/badge.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-green)
@@ -12,7 +12,7 @@
 
 ---
 
-## 📌 Project Overview
+## 📌 Framework Overview
 
 This repository contains a **production-grade End-to-End test automation framework** built with **Cypress** to validate the Opex Consulting website.
 
@@ -376,31 +376,7 @@ This framework:
 
 ---
 
-l
-The framework validates:
 
-✔ Navigation flows
-✔ UI content
-✔ Forms & submissions
-✔ Cross-domain routing
-✔ Security (XSS & malicious inputs)
-✔ Automated reporting
-✔ CI execution with GitHub Actions
-✔ Artifact generation (HTML reports, screenshots)
-
----
-
-## 🛠 Technology Stack
-| Tool           | Purpose             |
-|----------------|---------------------|
-| Cypress        | UI Test Automation  |
-| JavaScript     | Test Development    |
-| Mochawesome    | Test Reporting      |
-| Node.js        | Runtime Environment |
-| GitHub Actions | CI/CD Pipeline      |
-| Git            | Version Control     |
-
----
 
 ## 📂 Project Structure
 

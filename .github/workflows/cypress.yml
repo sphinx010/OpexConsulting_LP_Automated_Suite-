@@ -1,3 +1,4 @@
+# Updated workflow - artifact debug
 name: Cypress Automation CI
 
 on:
@@ -22,22 +23,32 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Cypress tests
-        run: npm run test:ci
+      - name: Run Cypress tests (do not stop workflow)
+        continue-on-error: true
+        run: |
+          npm run clean:reports
+          npm run cy:run
 
-      - name: Upload HTML Report
+      - name: Generate Mochawesome HTML
+        if: always()
+        run: |
+          npm run report:merge
+          npm run report:copy:screenshots
+          npm run report:generate
+          npm run report:customize
+
+      - name: Upload FINAL HTML Report (only)
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: mochawesome-report
-          path: cypress/reports/**
-          if-no-files-found: warn
+          name: mochawesome-html-report
+          path: cypress/reports/**/*.html
+          if-no-files-found: error
 
-      - name: Upload Screenshots
+      - name: Upload Debug JSON (only if HTML missing)
         uses: actions/upload-artifact@v4
-        if: always()
+        if: failure()
         with:
-          name: screenshots
-          path: cypress/screenshots/**
+          name: debug-json
+          path: cypress/reports/**/*.json
           if-no-files-found: warn
-

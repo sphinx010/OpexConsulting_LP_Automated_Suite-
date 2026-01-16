@@ -376,19 +376,7 @@ This framework:
 
 ---
 
-##🌍Opex Consulting – Cypress Automation Framework
-
-![CI](https://github.com/sphinx010/OpexConsulting_LP_Automated_Suite-/actions/workflows/cypress.yml/badge.svg)
-![Node](https://img.shields.io/badge/node-%3E%3D18-green)
-![Cypress](https://img.shields.io/badge/cypress-automation-brightgreen)
-![License](https://img.shields.io/badge/license-ISC-blue)
-
----
-
-## 📌 Project Overview
-
-This repository contains a **production-grade End-to-End test automation framework** built with **Cypress** to validate the Opex Consulting website.
-
+l
 The framework validates:
 
 ✔ Navigation flows
@@ -745,3 +733,4 @@ This framework:
 
 ###  Ready for Production Testing
 
+---

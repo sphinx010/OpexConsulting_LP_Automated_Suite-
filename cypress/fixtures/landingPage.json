@@ -1,0 +1,77 @@
+{
+  "navbar": {
+"industries": ["Industries",
+ "Learn how we draw on industry expertise to make companies more competitive.",
+ "Financial Institutions", 
+ "Fintechs", 
+ "Regulators",
+  "Logistics",
+   "Oil and Gas", 
+   "Technology", 
+   "Education",
+    "Agriculture"],
+
+    "products": ["Products", 
+    "RegTech365", 
+    "FarmsAgora",
+     "OpexA"],
+
+     
+    "services": ["Services",
+     {"Consulting & Advisory": [
+        "Strategy & Governance",
+        "IT Service Management & Operation", 
+        "Information and Technology Security",
+        "Resource Management & Business Management",    
+        "Architecture & Information Management",
+        "Solution Delivery"
+        ]},
+        
+    {"Technology Solutions":[
+        "Web development",
+        "Mobile development",
+        "Machine Learning & AI",
+        "Database Management",
+        "Product Design: UI/UX",
+        "Data Analytics (Product intelligence, Business Intelligence & Analytics)",
+        "Digital Marketing",
+        "Product Marketing",
+        "Product Management",
+        "Agile Transformation"
+    ]},
+{"Learning Solutions":[
+    "ISO 27001 INFORMATION SECURITY MANAGEMENT SYSTEM",
+    "ISO 27032 LEAD CYBERSECURTITY MANAGER",
+    "ISO 27017 CLOUD SECURITY MANAGER",
+    "ISO 22301- BUSINESS CONTINUITY MANAGEMENT SYSTEM",
+    "ISO 20000- IT SERVICE MANAGEMENT SYSTEM",
+    "ISO 9001- QUALITY MANAGEMENT SYSTEM",
+    "PMP Project Management Professional",
+    "Cyber Security",
+    "COBIT 2019 FOUNDATION",
+    "THE OPEN GROUP ARCHITECTURE FORUM TOGAF 9.2",
+    "NDPR | GDPR Data Protection training and accreditation",
+    "SECURE CODING TRAINING (Applications Security Management)",
+    "DEVOPS (Combined Software Development and IT Operations)",
+    "CISSP (Combined Software Development and IT Operations)",
+    "ISO 45001- OCCUPATIONAL HEALTH & SAFETY MANAGEMENT SYSTEM",
+    "CMMi Dev Training (Capability Maturity Model Integration L3)",
+    "Academy"
+    ]}
+],
+
+    "aboutUs": [{"Who We Are":[
+        "About Us",
+        "Leadership",
+        "Our Partners",
+        "Our Policies",
+        "VISIT PAGE"
+    ]}],
+
+    
+    "events": "Events",
+    "insights": "Insights",
+    "contactUs": ["Contact", "Let's level up your brand, together"], 
+    "readMoreButton": "Read More"
+  }
+}

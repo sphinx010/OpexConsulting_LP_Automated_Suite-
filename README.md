@@ -206,9 +206,12 @@ This command:
 Updated automatically by GitHub Actions after each run.
 
 ### Trends
-![Pass rate trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/pass_rate.svg)
-![Duration trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/duration.svg)
-![Failures trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/failures.svg)
+![Pass rate trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/pass_rate.svg)
+![Duration trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/duration.svg)
+![Failures trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/failures.svg)
+
+Full dashboard: https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/
+
 
 Full dashboard: https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/
 

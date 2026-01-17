@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Opex Test Analytics Dashboard</title>
+  <style>
+    body{background:#050a14;color:#e5e7eb;font-family:Segoe UI,system-ui,sans-serif;margin:0;padding:22px}
+    .wrap{max-width:980px;margin:0 auto}
+    .card{background:#0b1220;border:1px solid #22304a;border-radius:14px;padding:18px;margin:14px 0}
+    a{color:#93c5fd}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    @media (min-width: 900px){.grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>📊 Opex Automation Analytics</h1>
+    <div class="card">
+      <div><b>Latest run</b></div>
+      <div>Timestamp: 2026-01-17T01:25:38.201Z</div>
+      <div>Tests: 16 | Passes: 14 | Failures: 2</div>
+      <div>Pass rate: 87.5% | Duration: 119s</div>
+      <div>Run: <a href="https://github.com/sphinx010/OpexConsulting_LP_Automated_Suite-/actions/runs/21086020659">https://github.com/sphinx010/OpexConsulting_LP_Automated_Suite-/actions/runs/21086020659</a></div>
+      <div>SHA: 846773d163169f80f6bdbc679e23e84d9da1fba4</div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><img src="charts/pass_rate.svg" style="width:100%"/></div>
+      <div class="card"><img src="charts/duration.svg" style="width:100%"/></div>
+    </div>
+
+    <div class="card"><img src="charts/failures.svg" style="width:100%"/></div>
+
+    <div class="card">
+      <div><b>Raw data</b></div>
+      <div><a href="data/runs.json">runs.json</a></div>
+    </div>
+  </div>
+</body>
+</html>

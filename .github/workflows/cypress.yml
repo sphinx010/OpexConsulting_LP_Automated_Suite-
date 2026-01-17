@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -36,6 +39,7 @@ jobs:
           npm run report:customize
           npm run report:copy:screenshots
 
+      # ✅ Artifacts: HTML bundle
       - name: Upload FINAL HTML Report Bundle
         uses: actions/upload-artifact@v4
         if: always()
@@ -44,6 +48,25 @@ jobs:
           path: cypress/reports/html/**
           if-no-files-found: error
 
+      # ✅ Artifacts: raw screenshots from Cypress
+      - name: Upload Cypress Screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/**
+          if-no-files-found: warn
+
+      # ✅ Artifacts: screenshots bundled next to the report (links work)
+      - name: Upload Report-bundled Screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: report-bundled-screenshots
+          path: cypress/reports/html/screenshots/**
+          if-no-files-found: warn
+
+      # ✅ Debug JSON only if something fails
       - name: Upload Debug JSON (only if something fails)
         uses: actions/upload-artifact@v4
         if: failure()
@@ -51,3 +74,23 @@ jobs:
           name: debug-json
           path: cypress/reports/**/*.json
           if-no-files-found: warn
+
+      # ✅ Generate dashboard data + charts for README
+      - name: Generate dashboard charts
+        if: always()
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          node scripts/generateMetrics.js
+          node scripts/renderCharts.js
+
+      # ✅ Publish dashboard to GitHub Pages (gh-pages)
+      - name: Publish dashboard to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dashboard
+          publish_branch: gh-pages

@@ -198,6 +198,17 @@ This command:
 
 ## 📊 Reporting
 
+## 📈 CI Analytics (Last 30 Runs)
+
+> Updated automatically by GitHub Actions after each run.
+
+![Pass rate trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/pass_rate.svg)
+![Duration trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/duration.svg)
+![Failures trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/failures.svg)
+
+🔎 Full dashboard: https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/
+
+
 After execution:
 
 ```

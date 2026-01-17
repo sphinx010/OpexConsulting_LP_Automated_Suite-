@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 
+# Needed so the workflow can push to gh-pages
 permissions:
   contents: write
 
@@ -39,7 +40,7 @@ jobs:
           npm run report:customize
           npm run report:copy:screenshots
 
-      # ✅ Artifacts: HTML bundle
+      # ✅ Upload report bundle artifact (HTML + assets + bundled screenshots)
       - name: Upload FINAL HTML Report Bundle
         uses: actions/upload-artifact@v4
         if: always()
@@ -48,8 +49,8 @@ jobs:
           path: cypress/reports/html/**
           if-no-files-found: error
 
-      # ✅ Artifacts: raw screenshots from Cypress
-      - name: Upload Cypress Screenshots
+      # ✅ Upload raw Cypress screenshots artifact
+      - name: Upload Cypress Screenshots (raw)
         uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -57,16 +58,7 @@ jobs:
           path: cypress/screenshots/**
           if-no-files-found: warn
 
-      # ✅ Artifacts: screenshots bundled next to the report (links work)
-      - name: Upload Report-bundled Screenshots
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: report-bundled-screenshots
-          path: cypress/reports/html/screenshots/**
-          if-no-files-found: warn
-
-      # ✅ Debug JSON only if something fails
+      # ✅ Upload debug json if something fails
       - name: Upload Debug JSON (only if something fails)
         uses: actions/upload-artifact@v4
         if: failure()
@@ -75,7 +67,7 @@ jobs:
           path: cypress/reports/**/*.json
           if-no-files-found: warn
 
-      # ✅ Generate dashboard data + charts for README
+      # ✅ Build dashboard (runs.json + SVG charts + dashboard index.html)
       - name: Generate dashboard charts
         if: always()
         env:
@@ -86,9 +78,20 @@ jobs:
           node scripts/generateMetrics.js
           node scripts/renderCharts.js
 
-      # ✅ Publish dashboard to GitHub Pages (gh-pages)
-      - name: Publish dashboard to GitHub Pages
+      # ✅ PROOF step: show what will be published (prevents silent 404)
+      - name: Debug - list dashboard output
         if: always()
+        run: |
+          echo "---- dashboard ----"
+          ls -la dashboard || true
+          echo "---- dashboard/charts ----"
+          ls -la dashboard/charts || true
+          echo "---- dashboard/data ----"
+          ls -la dashboard/data || true
+
+      # ✅ Publish to GitHub Pages ONLY on push to main
+      - name: Publish dashboard to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,75 +1,106 @@
+/**
+ * generateMetrics.js
+ * - Reads Cypress Mochawesome merged JSON: cypress/reports/mochawesome.json
+ * - Extracts pass/fail counts and duration
+ * - Appends a compact run record into: dashboard/data/runs.json
+ * - Keeps last 30 runs (configurable)
+ */
+
 const fs = require("fs");
 const path = require("path");
+
+const MAX_RUNS = 30;
 
 const mochawesomePath = path.join("cypress", "reports", "mochawesome.json");
 const outDir = path.join("dashboard", "data");
 const outFile = path.join(outDir, "runs.json");
 
-fs.mkdirSync(outDir, { recursive: true });
-
-function safeReadJSON(p) {
+function safeReadJson(filePath) {
   try {
-    return JSON.parse(fs.readFileSync(p, "utf8"));
+    if (!fs.existsSync(filePath)) return null;
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
   } catch (e) {
     return null;
   }
 }
 
-const report = safeReadJSON(mochawesomePath);
+function ensureDir(dirPath) {
+  fs.mkdirSync(dirPath, { recursive: true });
+}
 
-const now = new Date().toISOString();
-const sha = process.env.GITHUB_SHA || "local";
-const runId = process.env.GITHUB_RUN_ID || "local";
-const repo = process.env.GITHUB_REPOSITORY || "local";
+function nowIso() {
+  return new Date().toISOString();
+}
 
-const runUrl =
-  repo !== "local" && runId !== "local"
-    ? `https://github.com/${repo}/actions/runs/${runId}`
-    : null;
+function num(v, fallback = 0) {
+  const n = Number(v);
+  return Number.isFinite(n) ? n : fallback;
+}
 
-let stats = {
-  tests: 0,
-  passes: 0,
-  failures: 0,
-  pending: 0,
-  skipped: 0,
-  duration: 0,
-};
+function extractFromMochawesome(mocha) {
+  // Mochawesome JSON typically has stats, results, etc.
+  const stats = mocha && mocha.stats ? mocha.stats : {};
+  const tests = num(stats.tests);
+  const passes = num(stats.passes);
+  const failures = num(stats.failures);
+  const pending = num(stats.pending);
 
-if (report && report.stats) {
-  stats = {
-    tests: report.stats.tests ?? 0,
-    passes: report.stats.passes ?? 0,
-    failures: report.stats.failures ?? 0,
-    pending: report.stats.pending ?? 0,
-    skipped: report.stats.skipped ?? 0,
-    duration: report.stats.duration ?? 0,
+  // duration can be in ms; if missing, fall back
+  const durationMs = num(stats.duration);
+  const durationSec = Math.max(0, Math.round(durationMs / 1000));
+
+  const passRate = tests > 0 ? Math.round((passes / tests) * 100) : 0;
+
+  return {
+    tests,
+    passes,
+    failures,
+    pending,
+    durationSec,
+    passRate,
   };
 }
 
-const passRate = stats.tests > 0 ? Math.round((stats.passes / stats.tests) * 1000) / 10 : 0;
+function main() {
+  const mocha = safeReadJson(mochawesomePath);
 
-const entry = {
-  ts: now,
-  sha,
-  runId,
-  runUrl,
-  ...stats,
-  passRate,
-};
+  // If mochawesome.json not found, still write a run record (for debugging)
+  const extracted = mocha
+    ? extractFromMochawesome(mocha)
+    : {
+        tests: 0,
+        passes: 0,
+        failures: 0,
+        pending: 0,
+        durationSec: 0,
+        passRate: 0,
+      };
 
-let history = [];
-if (fs.existsSync(outFile)) {
-  const existing = safeReadJSON(outFile);
-  if (Array.isArray(existing)) history = existing;
+  // Pull useful CI env vars if present
+  const run = {
+    ts: nowIso(),
+    sha: process.env.GITHUB_SHA || "",
+    runId: process.env.GITHUB_RUN_ID || "",
+    repo: process.env.GITHUB_REPOSITORY || "",
+    ...extracted,
+  };
+
+  ensureDir(outDir);
+
+  const existing = safeReadJson(outFile);
+  const runs = Array.isArray(existing) ? existing : [];
+
+  runs.push(run);
+
+  // Keep last MAX_RUNS
+  const trimmed = runs.slice(Math.max(0, runs.length - MAX_RUNS));
+
+  fs.writeFileSync(outFile, JSON.stringify(trimmed, null, 2), "utf8");
+
+  console.log(`✅ Metrics saved: ${outFile}`);
+  console.log(
+    `   tests=${run.tests} passes=${run.passes} failures=${run.failures} passRate=${run.passRate}% duration=${run.durationSec}s`
+  );
 }
 
-history.push(entry);
-
-// keep last 60 runs (enough for trends)
-history = history.slice(-60);
-
-fs.writeFileSync(outFile, JSON.stringify(history, null, 2), "utf8");
-
-console.log("✅ Metrics appended:", entry);
-console.log("✅ History written to:", outFile);
+main();

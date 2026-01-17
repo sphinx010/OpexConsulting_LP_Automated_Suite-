@@ -101,7 +101,7 @@ OpexTest__Automation
 
 ## ⚙ Setup Instructions
 
-### 1️⃣ Install Node.js
+###  Install Node.js
 
 Download:
 
@@ -118,7 +118,7 @@ npm -v
 
 ---
 
-### 2️⃣ Clone Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/sphinx010/OpexConsulting_LP_Automated_Suite-.git
@@ -127,7 +127,7 @@ cd OpexConsulting_LP_Automated_Suite-
 
 ---
 
-### 3️⃣ Install Dependencies
+### Install Dependencies
 
 ```bash
 npm install
@@ -201,12 +201,17 @@ This command:
 ## 📈 CI Analytics (Last 30 Runs)
 
 > Updated automatically by GitHub Actions after each run.
+## 📈 CI Analytics (Last 30 Runs)
 
+Updated automatically by GitHub Actions after each run.
+
+### Trends
 ![Pass rate trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/pass_rate.svg)
 ![Duration trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/duration.svg)
 ![Failures trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/failures.svg)
 
- Full dashboard: https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/
+Full dashboard: https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/
+
 
 
 After execution:

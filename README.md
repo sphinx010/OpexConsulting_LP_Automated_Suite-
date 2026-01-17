@@ -206,7 +206,7 @@ This command:
 ![Duration trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/duration.svg)
 ![Failures trend](https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/charts/failures.svg)
 
-🔎 Full dashboard: https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/
+ Full dashboard: https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/
 
 
 After execution:

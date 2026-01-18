@@ -22,16 +22,15 @@ import addContext from 'mochawesome/addContext'
 Cypress.on('test:after:run', (test, runnable) => {
   if (test.state !== 'failed') return
 
+  // Cypress screenshot file naming
   const fullTitle = runnable.titlePath().slice(1).join(' -- ')
   const screenshotFile = `${fullTitle} (failed).png`
 
-  // Report HTML lives in: cypress/reports/html/
-  // Screenshots copied into: cypress/reports/html/screenshots/
-  const reportRelativePath = `screenshots/${Cypress.spec.name}/${screenshotFile}`
+  // We copied screenshots to: cypress/reports/screenshots/<spec>/...
+  const reportRelativePath = `../screenshots/${Cypress.spec.name}/${screenshotFile}`
 
   addContext({ test }, reportRelativePath)
 })
-
 
 
 

@@ -214,7 +214,7 @@ clickElements(element) {
     this.verifyTextIsVisible('Industries');
     this.verifyTextIsVisible('Products');
     this.verifyTextIsVisible('Services');
-    cy.log('Site Launch Verification Complete');
+    cy.log('✅✅✅ Site Launch Verification Complete');
     return this;
   }
 
@@ -246,7 +246,7 @@ clickElements(element) {
       cy.log(`   → Reopening Industries dropdown for next iteration`);
       this.clickIndustriesButton();
 
-      cy.log(` Industry ${industry.name} ${index + 1} completed successfully\n`);
+      cy.log(`✅ Industry ${industry.name} ${index + 1} completed successfully\n`);
     })
 
     // Add a slight delay (e.g., 500ms) between iterations
@@ -254,7 +254,7 @@ clickElements(element) {
   });
 
   cy.wrap(null).then(() => {
-    cy.log(' Industries Exploration Complete');
+    cy.log('✅✅✅ Industries Exploration Complete');
   });
 }
 
@@ -275,7 +275,7 @@ const items = Navigations.productsComponents
       .click()
       cy.contains('body', item.label).should('be.visible');
   });
-    cy.log(' Test Complete')
+    cy.log('✅✅✅  Test Complete')
 
 
 }
@@ -297,13 +297,13 @@ testBusinessAssurance() {
       cy.url()
       .should('include', item.label);
   });
-    cy.log(' Test Complete')
+    cy.log('✅✅✅  Test Complete')
 }
 
 
 ////////////////Business Transformation [SERVICES]////////
 testBusinessTransformationServices() {
-  cy.log('Testing Business Transformation Services');
+  cy.log('🧪Testing Business Transformation Services');
    this.clickServicesButton();
   this.clickItem('Strategy & Governance');
   cy.wait(1000);
@@ -318,12 +318,12 @@ testBusinessTransformationServices() {
       cy.url()
       .should('include', item.label);
   });
-    cy.log('Test Complete')
+    cy.log('✅✅✅  Test Complete')
 }
 
 ////////////////////test CONTACT US form functionality and error handling/////////////
 testContactUsForm() {
-  cy.log('Contact Us Form Functionality Test');
+  cy.log('🧪 Contact Us Form Functionality Test');
   this.clickContactUsButton();
   cy.wait(2000);
   // Action: Fill out contact us form
@@ -345,7 +345,7 @@ testContactUsForm() {
 this.getElement('body')
   .contains('Please complete the reCAPTCHA', { timeout: 8000 })
   .should('be.visible');
-  cy.log(' Contact Us Form Functionality Test Complete');
+  cy.log('✅✅✅ Contact Us Form Functionality Test Complete');
 }
  
 //////////////////////////////////DATA HANDLING INPUTS//////////////////////////////////////////////////
@@ -385,7 +385,7 @@ xssEmail: `tester<script>alert(1)</script>me@example.com`,
 
 ////////////////////////////////////Industry Based Training Services////////////////////////////////////////////////////////////
 testIndustryBasedTrainingServices() {
-  cy.log('Testing Industry Based Training Services');
+  cy.log('🧪 Testing Industry Based Training Services');
  this.clickServicesButton();  
  this.clickItem('Strategy & Governance');
   cy.wait(2000);
@@ -424,12 +424,12 @@ testIndustryBasedTrainingServices() {
   .and('not.be.disabled')
   .click();
  this.verifyTextIsVisible('Registration Confirmed', { timeout: 50000 })
-  cy.log('Test Complete')
+  cy.log('✅✅✅  Test Complete')
 }
 
 /////////Product Services//////////////
 testProductServices() {
- cy.log('Product Services Testing ');
+ cy.log('🧪  Product Services Testing ');
  this.clickServicesButton();
   this.clickItem('Strategy & Governance');
   cy.wait(1000);
@@ -442,7 +442,7 @@ testProductServices() {
       cy.url()
       .should('include', item.label);
   });
-  cy.log('Test Complete')
+  cy.log('✅✅✅  Test Complete')
 }
 
 ///////////Engineering Services////////////
@@ -460,7 +460,7 @@ testEngineeringServices() {
       cy.url()
       .should('include', item.label);
   });
-    cy.log('Test Complete')
+    cy.log('✅✅✅  Test Complete')
 }
 
 
@@ -483,7 +483,7 @@ testImpactBasedTrainingServices() {
   const items = Navigations.servicesComponents["Impact Based Training"];
 
   cy.wrap(items).each((item, index) => {
-    cy.log(` Tab ${index + 1}`);
+    cy.log(`🧪 Tab ${index + 1}`);
 
     this.clickElements(item.name);
 
@@ -497,7 +497,7 @@ testImpactBasedTrainingServices() {
     cy.visit('https://opexconsult.com/capabilities?capability=imp-base&tab=1');
   });
 
-  cy.log('Impact Based Training Academy navigation verified via intercept and works as expected');
+  cy.log('✅✅✅Impact Based Training Academy navigation verified via intercept and works as expected');
 }
 
 //////////Who We Are Components//////////////////////
@@ -519,7 +519,7 @@ static whoWeAreComponents = [
 
 
 testWhoWeAreComponents() {
-  cy.log(' Testing Who We Are Components');
+  cy.log('🧪 Testing Who We Are Components');
  this.clickAboutUsButton();  
   cy.wait(1000);
   cy.log(` Clicking on: ${Navigations.wWAtabNames[0]}`);
@@ -534,36 +534,36 @@ testWhoWeAreComponents() {
       cy.url()
       .should('include', item.endPoint);
   });
-    cy.log('Test Complete')
+    cy.log('✅✅✅  Test Complete')
 }
 
 static testEventsComponents = ['.p-6 > .font-sans', 'Who We Are']
 //Events Components
 testEventsComponents() {
-  cy.log(' Testing Events Components');
+  cy.log('🧪 Testing Events Components');
   this.clickEventsButton();  
   cy.wait(1000);
   cy.get(Navigations.testEventsComponents[0]);
   cy.contains(Navigations.testEventsComponents[1]).should('be.visible');
-  cy.log('  Test Complete')
+  cy.log('✅✅✅  Test Complete')
 }
 
 static insightsRepo = ['.text-3xl', 'Resources and insights', 'Insight']
 //Test insights components navigation
 testInsightsComponents() {
-  cy.log(' Testing Insights Components Navigation');
+  cy.log('🧪 Testing Insights Components Navigation');
   this.clickInsightsButton();  
   cy.wait(1000);
   cy.contains(Navigations.insightsRepo[0], Navigations.insightsRepo[1]);
   this.verifyUrlContains(Navigations.insightsRepo[2]);
-  cy.log('  Test Complete')
+  cy.log('✅✅✅  Test Complete')
 }
 
 /////////////////////////////////////////////////////////////////////Security Test Methods/////////////////////////////////////////////////////////////////////
 
 // Footer subscription form XSS protection test
 testFooterSubscribeFormFieldxssProtection() {
-   cy.log(' Testing Footer Subscription Form Security Check');
+   cy.log('🧪 Testing Footer Subscription Form Security Check');
    this.typeIntoElement('input[placeholder="Enter your Email', Navigations.badInputs.xssEmail)
   cy.wait(1000);
   cy.contains('button', 'Subscribe').should('be.visible').click();
@@ -579,7 +579,7 @@ testFooterSubscribeFormFieldxssProtection() {
 
 //testing enrollment form for security vulnerabilities
 testUserEnrollmentFormXSSProtection() {
-  cy.log(' Testing User Enrollment Form XSS / Malicious Input Test');
+  cy.log('🧪 Testing User Enrollment Form XSS / Malicious Input Test');
  this.clickServicesButton();  
  this.clickItem('Strategy & Governance');
   cy.wait(3000);
@@ -601,7 +601,7 @@ testUserEnrollmentFormXSSProtection() {
   .click();
 cy.wait(12000);
 cy.get('body').should('not.contain', 'Registration Confirmed')
-cy.log('Test Complete');
+cy.log('✅✅✅  Test Complete');
 }
 
 testFooterSubscribeFormFieldFunctionality() {
@@ -616,8 +616,10 @@ testFooterSubscribeFormFieldFunctionality() {
   cy.wait('@subscribeRequest').then((interception) => {
     expect(interception.response.statusCode).to.eq(200);
   })
+  cy.log('❌❌❌Subscription form failed functionality test');
+  
   // 1. Setup the API Intercept before the action happens
-  cy.log('Footer Subscription box functionality test complete'); 
+  cy.log('✅✅✅ Footer Subscription box functionality test complete'); 
 }
   ///////////////////////////////////////////////////////////////////////Assertion Methods///////////////////////////////////////////////////////////////////////////////////
   verifyElementIsVisible(element) {

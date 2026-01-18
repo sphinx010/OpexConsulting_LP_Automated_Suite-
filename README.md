@@ -212,7 +212,9 @@ Updated automatically by GitHub Actions after each run.
 ![Duration trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/duration.svg)
 ![Failures trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/failures.svg)
 
- Full dashboard: https://sphinx010.github.io/OpexConsulting_LP_Automated_Suite-/
+ Upload mochawesom artifacts here for live analytics:
+ [![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_BADGE_ID/deploy-status)](https://app.netlify.com/sites/YOUR_SITE_NAME/deploys)
+
 
 
 

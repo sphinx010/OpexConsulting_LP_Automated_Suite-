@@ -5,12 +5,12 @@
   "main": "index.js",
 "scripts": {
   "clean:reports": "rimraf cypress/reports",
-  "cy:run": "cypress run --browser chrome",
+  "cy:run": "cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=false,json=true,timestamp=mmddyyyy_HHMMss",
   "report:merge": "mochawesome-merge \"cypress/reports/mochawesome_*.json\" > cypress/reports/mochawesome.json",
-  "report:generate": "marge \"cypress/reports/mochawesome.json\" --reportDir \"cypress/reports/html\" --inline",
-  "report:customize": "node scripts/injectText.js",
-  "report:copy:screenshots": "node scripts/copyScreenshots.js",
-  "test:ci": "npm run clean:reports && npm run cy:run && npm run report:merge && npm run report:copy:screenshots && npm run report:generate && npm run report:customize"
+  "report:index": "node scripts/generateReportIndex.js",
+  "report:copy:screenshots": "node scripts/copyScreenshotsToReports.js",
+  "report:charts": "node scripts/generateCharts.js",
+  "test:ci": "npm run clean:reports && npm run cy:run && npm run report:merge && npm run report:index && npm run report:copy:screenshots && npm run report:charts"
 
 }
 ,

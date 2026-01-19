@@ -201,12 +201,10 @@ This command:
 ## 📈 CI Analytics (Last 30 Runs)
 
 > Updated automatically by GitHub Actions after each run.
-## 📈 CI Analytics (Last 30 Runs)
 
-Updated automatically by GitHub Actions after each run.
-
-### Trends
-## 📈 CI Analytics (Last 30 Runs)
+```
+Analytics (Last 30 Runs)
+```
 
 ![Pass rate trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/pass_rate.svg)
 ![Duration trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/duration.svg)

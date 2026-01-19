@@ -210,7 +210,7 @@ Analytics (Last 30 Runs)
 ![Duration trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/duration.svg)
 ![Failures trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/failures.svg)
 
- Upload mochawesom artifacts here for live analytics:
+View to the app to alternatively upload debug.json artifacts here for live analytics:
 [View Live Analytics here...](https://opexqaanalytics.netlify.app/)
 
 
@@ -229,6 +229,7 @@ You will get:
 * HTML report
 * JSON data
 * Screenshots (on failure)
+* live analytics report on the Readme 
 
 ---
 

@@ -90,6 +90,12 @@ jobs:
           echo "---- dashboard/data ----"
           ls -la dashboard/data || true
 
+      - name: Ensure .nojekyll for GitHub Pages
+        if: always()
+        run: |
+          mkdir -p dashboard
+          touch dashboard/.nojekyll
+
       # ✅ Publish to GitHub Pages ONLY on push to main
       - name: Publish dashboard to GitHub Pages
         if: always() && ((github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'))

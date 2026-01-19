@@ -1,15 +1,14 @@
 [
   {
-    "ts": "2026-01-17T01:30:55.931Z",
-    "sha": "bb4977322d3c17b2019c549db1278b7fc70f5825",
-    "runId": "21086103367",
-    "runUrl": "https://github.com/sphinx010/OpexConsulting_LP_Automated_Suite-/actions/runs/21086103367",
+    "ts": "2026-01-19T11:41:54.916Z",
+    "sha": "fe0c1fa2c8699c58eff5311d33258a427e929b96",
+    "runId": "21136075331",
+    "repo": "sphinx010/OpexConsulting_LP_Automated_Suite-",
     "tests": 16,
-    "passes": 14,
-    "failures": 2,
+    "passes": 13,
+    "failures": 3,
     "pending": 0,
-    "skipped": 0,
-    "duration": 119925,
-    "passRate": 87.5
+    "durationSec": 102,
+    "passRate": 81
   }
 ]

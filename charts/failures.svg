@@ -1,11 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" role="img" aria-label="Failures (last 30 runs)">
-  <rect width="100%" height="100%" fill="#0b1220"/>
-  <text x="30" y="22" fill="#e5e7eb" font-size="14" font-family="Segoe UI, system-ui, sans-serif">Failures (last 30 runs)</text>
-  <text x="870" y="22" fill="#fecaca" font-size="13" text-anchor="end" font-family="Segoe UI, system-ui, sans-serif">Latest: 2</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="460" viewBox="0 0 900 460">
+    <defs>
+      <linearGradient id="bgFade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#1f2430"/>
+        <stop offset="1" stop-color="#1b1f2a"/>
+      </linearGradient>
+      <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/>
+      </filter>
+    </defs>
 
-  <line x1="30" y1="190" x2="870" y2="190" stroke="#22304a" />
-  <line x1="30" y1="30" x2="30" y2="190" stroke="#22304a" />
+    <rect x="0" y="0" width="900" height="460" fill="url(#bgFade)"/>
 
-  <rect x="156.0" y="30.0" width="588.0" height="160.0" fill="#fb7185"/>
-</svg>
+    <text x="36" y="44" fill="#eef1f6" font-size="20" font-weight="700" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      #### Test Results
+    </text>
+    <line x1="36" y1="58" x2="864" y2="58" stroke="#2f3546" stroke-width="1"/>
+
+    <text x="36" y="98" fill="#eef1f6" font-size="18" font-weight="600" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      Test Summary
+    </text>
+
+    <text x="72" y="158" fill="#eef1f6" font-size="15" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      <tspan fill="#3fa15a" font-weight="700">- Green:</tspan>
+      <tspan> 13 tests passed</tspan>
+    </text>
+    <text x="600" y="158" fill="#eef1f6" font-size="15" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      <tspan fill="#b33430" font-weight="700">- Red:</tspan>
+      <tspan> 3 tests failed</tspan>
+    </text>
+
+    <g filter="url(#softShadow)">
+      <path d="M 320 254.99999999999997 A 130 130 0 1 1 400.25115379253833 375.1043392264673 L 423.21215973444373 319.67156727579004 A 70 70 0 1 0 380 255 Z" fill="#3fa15a"/>
+      <path d="M 400.25115379253833 375.1043392264673 A 130 130 0 0 1 320 255.00000000000003 L 380 255 A 70 70 0 0 0 423.21215973444373 319.67156727579004 Z" fill="#b33430"/>
+    </g>
+
+    <circle cx="450" cy="255" r="64" fill="#232836"/>
+
+    <text x="530" y="197" fill="#b33430" font-size="14" font-weight="700" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      Failed: 3 Tests
+    </text>
+    <text x="546" y="217" fill="#eef1f6" font-size="14" font-weight="700" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      18.8%
+    </text>
+
+    <text x="450" y="301" fill="#eef1f6" text-anchor="middle" font-size="16" font-weight="700" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      Passed: 13 Tests
+    </text>
+    <text x="450" y="323" fill="#eef1f6" text-anchor="middle" font-size="16" font-weight="700" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      81.3%
+    </text>
+
+    <text x="450" y="410" fill="#eef1f6" text-anchor="middle" font-size="14" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      - 81.3% of tests passed
+    </text>
+    <text x="450" y="432" fill="#eef1f6" text-anchor="middle" font-size="14" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
+      - 18.8% of tests failed
+    </text>
+  </svg>

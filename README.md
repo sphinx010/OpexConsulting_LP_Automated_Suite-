@@ -3,7 +3,7 @@
 
 ---
 
-# 🌎 Opex Consulting – Cypress Automation Framework
+# Opex Consulting – Cypress Automation Framework
 
 ![CI](https://github.com/sphinx010/OpexConsulting_LP_Automated_Suite-/actions/workflows/cypress.yml/badge.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-green)

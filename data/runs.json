@@ -1,14 +1,14 @@
 [
   {
-    "ts": "2026-01-20T08:46:09.804Z",
-    "sha": "9a351f7e791e4293e0cf05bc8a47565fcd878517",
-    "runId": "21164964121",
+    "ts": "2026-01-21T15:50:29.775Z",
+    "sha": "adc6a9ad03cc12a085218161ef88286cc7a3f14c",
+    "runId": "21216028274",
     "repo": "sphinx010/OpexConsulting_LP_Automated_Suite-",
     "tests": 16,
-    "passes": 13,
-    "failures": 3,
+    "passes": 11,
+    "failures": 5,
     "pending": 0,
-    "durationSec": 107,
-    "passRate": 81
+    "durationSec": 104,
+    "passRate": 69
   }
 ]

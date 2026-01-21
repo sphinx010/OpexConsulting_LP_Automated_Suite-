@@ -11,6 +11,7 @@
 ![License](https://img.shields.io/badge/license-ISC-blue)
 
 ---
+---
 
 ## 📌 Framework Overview
 

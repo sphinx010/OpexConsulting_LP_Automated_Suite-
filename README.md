@@ -42,49 +42,40 @@ The framework validates:
 
 ---
 
-
 OpexTest__Automation
 │
-├─ .github
-│  └─ workflows
+├─ .github/
+│  └─ workflows/
 │     └─ cypress.yml
 │
-├─ cypress
-│  ├─ e2e
+├─ cypress/
+│  ├─ e2e/
 │  │  └─ landingPage.cy.js
-│  ├─ fixtures
+│  ├─ fixtures/
 │  │  └─ landingPage.json
-│  ├─ reports
-│  │  ├─ Bug_REPORT_R1
-│  │  └─ screenshots
-│  │     └─ landingPage.cy.js
-│  ├─ screenshots
-│  │  └─ landingPage.cy.js
-│  │     ├─ Testing Opex landing page test features -- [REGRESSION][FOOTER] tests footer subscription box functionality (failed).png
-│  │     ├─ Testing Opex landing page test features -- [REGRESSION][INDUSTRIES] explores all industries navigation functionality (failed).png
-│  │     ├─ Testing Opex landing page test features -- [REGRESSION][TRAINING] test services navigation components (Impact Based Training) (failed).png
-│  │     └─ Testing Opex landing page test features -- [SECURITY][XSS] test user enrollment form for cross-site scripting vulnerability (failed).png
-│  └─ support
-│     ├─ page_Object Model
+│  ├─ reports/
+│  │  ├─ Bug_REPORT_R1/
+│  │  └─ screenshots/
+│  ├─ screenshots/
+│  │  └─ landingPage.cy.js/
+│  └─ support/
+│     ├─ page_object_model/
 │     │  └─ landingPageObject.js
 │     ├─ commands.js
 │     └─ e2e.js
 │
-├─ scripts
+├─ scripts/
 │  ├─ copyScreenshots.js
 │  ├─ generateMetrics.js
 │  ├─ injectText.js
 │  └─ renderCharts.js
 │
-├─ .gitignore
 ├─ cypress.config.js
-├─ jsconfig.json
-├─ OPEX_LANDING_PAGE_Automation_BUG_REPORT.pdf
-├─ package-lock.json
 ├─ package.json
+├─ package-lock.json
+├─ OPEX_LANDING_PAGE_Automation_BUG_REPORT.pdf
 └─ README.md
 
-
 
 ## 🧪 Test Coverage
 

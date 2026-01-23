@@ -22,38 +22,38 @@
 
     <text x="72" y="158" fill="#eef1f6" font-size="15" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
       <tspan fill="#3fa15a" font-weight="700">- Green:</tspan>
-      <tspan> 12 tests passed</tspan>
+      <tspan> 14 tests passed</tspan>
     </text>
     <text x="600" y="158" fill="#eef1f6" font-size="15" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
       <tspan fill="#b33430" font-weight="700">- Red:</tspan>
-      <tspan> 4 tests failed</tspan>
+      <tspan> 2 tests failed</tspan>
     </text>
 
     <g filter="url(#softShadow)">
-      <path d="M 320 254.99999999999997 A 130 130 0 1 1 450 385 L 450 325 A 70 70 0 1 0 380 255 Z" fill="#3fa15a"/>
-      <path d="M 450 385 A 130 130 0 0 1 320 255.00000000000003 L 380 255 A 70 70 0 0 0 450 325 Z" fill="#b33430"/>
+      <path d="M 320 254.99999999999997 A 130 130 0 1 1 358.0761184457488 346.9238815542512 L 400.50252531694167 304.49747468305833 A 70 70 0 1 0 380 255 Z" fill="#3fa15a"/>
+      <path d="M 358.0761184457488 346.9238815542512 A 130 130 0 0 1 320 255.00000000000003 L 380 255 A 70 70 0 0 0 400.50252531694167 304.49747468305833 Z" fill="#b33430"/>
     </g>
 
     <circle cx="450" cy="255" r="64" fill="#232836"/>
 
     <text x="530" y="197" fill="#b33430" font-size="14" font-weight="700" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
-      Failed: 4 Tests
+      Failed: 2 Tests
     </text>
     <text x="546" y="217" fill="#eef1f6" font-size="14" font-weight="700" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
-      25.0%
+      12.5%
     </text>
 
     <text x="450" y="301" fill="#eef1f6" text-anchor="middle" font-size="16" font-weight="700" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
-      Passed: 12 Tests
+      Passed: 14 Tests
     </text>
     <text x="450" y="323" fill="#eef1f6" text-anchor="middle" font-size="16" font-weight="700" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
-      75.0%
+      87.5%
     </text>
 
     <text x="450" y="410" fill="#eef1f6" text-anchor="middle" font-size="14" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
-      - 75.0% of tests passed
+      - 87.5% of tests passed
     </text>
     <text x="450" y="432" fill="#eef1f6" text-anchor="middle" font-size="14" font-family="Trebuchet MS, Lucida Sans Unicode, Lucida Grande, sans-serif">
-      - 25.0% of tests failed
+      - 12.5% of tests failed
     </text>
   </svg>

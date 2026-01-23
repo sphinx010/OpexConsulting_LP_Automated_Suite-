@@ -1,38 +1,32 @@
-
-
-
----
-
 # Opex Consulting – Cypress Automation Framework
 
-![CI](https://github.com/sphinx010/OpexConsulting_LP_Automated_Suite-/actions/workflows/cypress.yml/badge.svg)
-![Node](https://img.shields.io/badge/node-%3E%3D18-green)
-![Cypress](https://img.shields.io/badge/cypress-automation-brightgreen)
-![License](https://img.shields.io/badge/license-ISC-blue)
-
 ---
+
 ---
 
 ## 📌 Framework Overview
 
 This repository contains a **production-grade End-to-End test automation framework** built with **Cypress** to validate the Opex Consulting website.
 
+The framework is designed and structured to mirror **real enterprise QA automation practices**, with strong emphasis on **CI-driven execution, reporting, analytics, and security validation**.
+
 The framework validates:
 
-✔ Navigation flows
-✔ UI content
-✔ Forms & submissions
-✔ Cross-domain routing
-✔ Security (XSS & malicious inputs)
-✔ Automated reporting
+✔ End-to-end navigation flows
+✔ UI content and layout consistency
+✔ Forms and user submissions
+✔ Cross-domain routing and external redirects
+✔ Security vulnerabilities (XSS & malicious inputs)
+✔ Automated reporting and metrics generation
 ✔ CI execution with GitHub Actions
-✔ Artifact generation (HTML reports, screenshots)
+✔ Artifact generation (HTML reports, JSON data, screenshots)
 
 ---
 
 ## 🛠 Technology Stack
+
 | Tool           | Purpose             |
-|----------------|---------------------|
+| -------------- | ------------------- |
 | Cypress        | UI Test Automation  |
 | JavaScript     | Test Development    |
 | Mochawesome    | Test Reporting      |
@@ -42,6 +36,9 @@ The framework validates:
 
 ---
 
+## 📂 Project Structure
+
+```text
 OpexTest__Automation
 │
 ├─ .github/
@@ -75,41 +72,43 @@ OpexTest__Automation
 ├─ package-lock.json
 ├─ OPEX_LANDING_PAGE_Automation_BUG_REPORT.pdf
 └─ README.md
+```
 
+---
 
 ## 🧪 Test Coverage
 
 ### Navigation
 
-* Industries
-* Products
-* Services
-* Events
-* Who We Are
+• Industries
+• Products
+• Services
+• Events
+• Who We Are
 
 ### Forms
 
-* Contact Us
-* Enrollment
-* Footer subscription
+• Contact Us
+• Enrollment
+• Footer subscription
 
 ### Security
 
-* XSS payload injection
-* HTML injection
-* SQL-like payloads
-* Input validation
+• XSS payload injection
+• HTML injection
+• SQL-like payloads
+• Input validation
 
 ### Training & External
 
-* Industry Based Training
-* Impact Based Training (Academy redirects)
+• Industry Based Training
+• Impact Based Training (Academy redirects)
 
 ---
 
 ## ⚙ Setup Instructions
 
-###  Install Node.js
+### Install Node.js
 
 Download:
 
@@ -151,41 +150,41 @@ npm install
 npx cypress open
 ```
 
-### Run headless
+### Run Headless
 
 ```bash
 npm run cy:run
 ```
 
-### Run full pipeline
+### Run Full CI Pipeline
 
 ```bash
 npm run test:ci
 ```
-### Merge Json Reports
+
+### Merge JSON Reports
 
 ```bash
 npm run report:merge
 ```
 
-### Generate HTML reports
+### Generate HTML Reports
 
 ```bash
 npm run report:generate
 ```
 
-### Add Custom INFO & Branding
+### Add Custom Info & Branding
 
 ```bash
 npm run report:customize
 ```
 
-### Embed Screenshots 
+### Embed Screenshots
 
 ```bash
 npm run report:copy:screenshots
 ```
-
 
 ### Storage Management
 
@@ -193,14 +192,14 @@ npm run report:copy:screenshots
 npm run clean:reports
 ```
 
+This workflow:
 
-This command:
-✔ Cleans reports
-✔ Runs tests
-✔ Merges JSON
-✔ Generates HTML
-✔ Injects branding
-✔ Attaches screenshots
+✔ Cleans previous reports
+✔ Executes tests
+✔ Merges JSON output
+✔ Generates HTML reports
+✔ Injects custom branding
+✔ Attaches screenshots to reports
 
 ---
 
@@ -208,50 +207,47 @@ This command:
 
 ## 📈 CI Analytics (Last 30 Runs)
 
-> Updated automatically by GitHub Actions after each run.
+> Automatically updated by GitHub Actions after each workflow execution.
 
 ```
 Analytics (Last 30 Runs)
 ```
 
-![Pass rate trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/pass_rate.svg)
-![Duration trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/duration.svg)
-![Failures trend](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/failures.svg)
+![Pass rate trend]([https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/pass_rate.svg](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/pass_rate.svg))
 
-Alternatively you can view the app to upload debug.json artifacts here for live analytics:
-[View Live Analytics here...](https://opexqaanalytics.netlify.app/)
+![Duration trend]([https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/duration.svg](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/duration.svg))
 
+![Failures trend]([https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/failures.svg](https://raw.githubusercontent.com/sphinx010/OpexConsulting_LP_Automated_Suite-/gh-pages/charts/failures.svg))
 
-
-
-
-
-After execution:
-
-```
-cypress/reports
-```
-
-You will get:
-
-* HTML report
-* JSON data
-* Screenshots (on failure)
-* live analytics report on the Readme 
+➡ **Live Analytics App (upload ********`debug.json`******** for interactive insights):**
+[https://opexqaanalytics.netlify.app/](https://opexqaanalytics.netlify.app/)
 
 ---
 
-## Custom Report Branding
+After execution, the following artifacts are available under:
 
-we inject a custom banner into reports:
+```text
+cypress/reports
+```
+
+• HTML test report
+• JSON metrics data
+• Screenshots on failure
+• Live analytics rendered directly in the README
+
+---
+
+## 🧩 Custom Report Branding
+
+A custom banner is dynamically injected into the reports, including:
 
 ✔ Project name
 ✔ Engineer name
 ✔ Environment
 
-Script:
+Script responsible:
 
-```
+```text
 scripts/injectText.js
 ```
 
@@ -264,33 +260,33 @@ scripts/injectText.js
 | Screenshots | `cypress/screenshots/` |
 | Videos      | `cypress/videos/`      |
 
-Screenshots auto-capture on failures.
+Screenshots are automatically captured on test failures.
 
 ---
 
 ## ⚙ CI/CD – GitHub Actions
 
-Pipeline runs on:
+The pipeline runs on:
 
-* Push
-* Pull Requests
+• Push events
+• Pull requests
 
 ### CI Steps
 
 1. Install dependencies
-2. Run Cypress
-3. Generate report
+2. Execute Cypress tests
+3. Generate reports
 4. Upload artifacts
 
-Artifacts:
+Artifacts available for download:
 
-* HTML report
-* Screenshots
+• HTML report
+• Screenshots
 
-Download:
+Path:
 
-```
-GitHub → Actions → Run → Artifacts
+```text
+GitHub → Actions → Workflow Run → Artifacts
 ```
 
 ---
@@ -299,7 +295,7 @@ GitHub → Actions → Run → Artifacts
 
 | Name               | Purpose          |
 | ------------------ | ---------------- |
-| mochawesome-report | HTML report      |
+| mochawesome-report | HTML test report |
 | screenshots        | Failure evidence |
 
 ---
@@ -322,7 +318,7 @@ Node + Cypress
 Browser Automation
    |
    v
-README Live Test Analytics per run
+README Live Analytics (per run)
    |
    v
 Artifacts (HTML, Screenshots)
@@ -332,7 +328,7 @@ Artifacts (HTML, Screenshots)
 
 ## 📈 Metrics Tracked
 
-✔ Pass/Fail rate
+✔ Pass / Fail rate
 ✔ Execution time
 ✔ Regression stability
 ✔ Coverage growth
@@ -341,16 +337,16 @@ Artifacts (HTML, Screenshots)
 
 ## 🔐 Security Validation
 
-The framework validates:
+The framework validates against:
 
-* Script injection
-* HTML injection
-* Malicious payloads
-* Input sanitization
+• Script injection attacks
+• HTML injection
+• Malicious payloads
+• Input sanitization
 
 ---
 
-## Available exe Scripts
+## 📜 Available NPM Scripts
 
 ```bash
 npm run cy:run
@@ -364,13 +360,15 @@ npm run report:copy:screenshots
 
 ---
 
-## 🧹 Clean Reports or Clear old Artifacts
+## 🧹 Clean Reports or Clear Old Artifacts
 
 ```bash
 npm run clean:reports
 ```
 
-##  Executed by
+---
+
+## 👤 Executed By
 
 **Ayooluwa Paul Obembe**
 QA Automation Engineer
@@ -379,18 +377,18 @@ QA Automation Engineer
 
 ## ⭐ Future Enhancements
 
-* Test analytics dashboard
-* Slack notifications
-* Email reports
-* Docker execution
-* Parallel runs
-* Cloud grids
+• Expanded test analytics dashboard
+• Slack notifications
+• Email reports
+• Dockerized execution
+• Parallel test execution
+• Cloud execution grids
 
 ---
 
-##  Final Notes
+## 🏁 Final Notes
 
-This framework:
+This framework is:
 
 ✔ Scalable
 ✔ CI-ready
@@ -399,10 +397,4 @@ This framework:
 
 ---
 
-###  Ready for Production Testing
-
-
-
----
-
-
+### ✅ Ready for Production Testing

@@ -42,33 +42,29 @@ The framework validates:
 
 ---
 
-## 📂 Project Structure
-
-```
+
 OpexTest__Automation
-│
-├─ .github
-│   └─ workflows
-│       └─ cypress.yml       # CI pipeline
-│
-├─ cypress
-│   ├─ e2e                   # Test specs
-│   ├─ support               # Hooks & commands
-│   ├─ fixtures              # Test data
-│   ├─ screenshots           # Failure screenshots
-│   ├─ videos                # Run recordings
-│   └─ reports               # Mochawesome output
-│
-├─ scripts
-│   ├─ injectText.js         # Custom report branding
-│   └─ copyScreenshots.js    # Attach screenshots
-│
-├─ cypress.config.js
-├─ package.json
-└─ README.md
-```
-
----
+|
+|- .github
+|  |- workflows
+|     |- cypress.yml       # CI pipeline
+|
+|- cypress
+|  |- e2e                  # Test specs
+|  |- support              # Hooks & commands
+|  |- fixtures             # Test data
+|  |- screenshots          # Failure screenshots
+|  |- videos               # Run recordings
+|  |- reports              # Mochawesome output
+|
+|- scripts
+|  |- injectText.js        # Custom report branding
+|  |- copyScreenshots.js   # Attach screenshots
+|
+|- cypress.config.js
+|- package.json
+|- README.md
+
 
 ## 🧪 Test Coverage
 

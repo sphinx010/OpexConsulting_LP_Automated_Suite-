@@ -1,7 +1,4 @@
 # Opex Consulting – Cypress Automation Framework
-
----
-
 ---
 
 ## 📌 Framework Overview

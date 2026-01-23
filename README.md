@@ -44,26 +44,46 @@ The framework validates:
 
 
 OpexTest__Automation
-|
-|- .github
-|  |- workflows
-|     |- cypress.yml       # CI pipeline
-|
-|- cypress
-|  |- e2e                  # Test specs
-|  |- support              # Hooks & commands
-|  |- fixtures             # Test data
-|  |- screenshots          # Failure screenshots
-|  |- videos               # Run recordings
-|  |- reports              # Mochawesome output
-|
-|- scripts
-|  |- injectText.js        # Custom report branding
-|  |- copyScreenshots.js   # Attach screenshots
-|
-|- cypress.config.js
-|- package.json
-|- README.md
+│
+├─ .github
+│  └─ workflows
+│     └─ cypress.yml
+│
+├─ cypress
+│  ├─ e2e
+│  │  └─ landingPage.cy.js
+│  ├─ fixtures
+│  │  └─ landingPage.json
+│  ├─ reports
+│  │  ├─ Bug_REPORT_R1
+│  │  └─ screenshots
+│  │     └─ landingPage.cy.js
+│  ├─ screenshots
+│  │  └─ landingPage.cy.js
+│  │     ├─ Testing Opex landing page test features -- [REGRESSION][FOOTER] tests footer subscription box functionality (failed).png
+│  │     ├─ Testing Opex landing page test features -- [REGRESSION][INDUSTRIES] explores all industries navigation functionality (failed).png
+│  │     ├─ Testing Opex landing page test features -- [REGRESSION][TRAINING] test services navigation components (Impact Based Training) (failed).png
+│  │     └─ Testing Opex landing page test features -- [SECURITY][XSS] test user enrollment form for cross-site scripting vulnerability (failed).png
+│  └─ support
+│     ├─ page_Object Model
+│     │  └─ landingPageObject.js
+│     ├─ commands.js
+│     └─ e2e.js
+│
+├─ scripts
+│  ├─ copyScreenshots.js
+│  ├─ generateMetrics.js
+│  ├─ injectText.js
+│  └─ renderCharts.js
+│
+├─ .gitignore
+├─ cypress.config.js
+├─ jsconfig.json
+├─ OPEX_LANDING_PAGE_Automation_BUG_REPORT.pdf
+├─ package-lock.json
+├─ package.json
+└─ README.md
+
 
 
 ## 🧪 Test Coverage
@@ -311,7 +331,7 @@ Node + Cypress
 Browser Automation
    |
    v
-Mochawesome Reports
+README Live Test Analytics per run
    |
    v
 Artifacts (HTML, Screenshots)
